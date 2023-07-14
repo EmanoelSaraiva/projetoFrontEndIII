@@ -51,18 +51,22 @@ async function renderizarPersonagem(personagen) {
     </div>
   </div>
   <div class="modal fade" id="${personagen.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- ------------------ Modal ---------------------- -->
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content modal_background">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">${personagen.name}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <img src="${personagen.image}" class="img-fluid rounded-start" alt="..." style="max-height: 220px; min-height: 220px;">
+      <img src="${personagen.image}" class="img-fluid rounded-start" alt="..." style="max-height: 200px; min-height: 200px;">
+        <div class="card-body"> 
+        <div class="statusCirculo" style="background-color: ${statusCor};"></div>
+        <p class="card-text">${statusTexto} - ${personagen.species}</p>
+        <p class="card-text">Visto por último:</p>
+        <p class="card-text"><small class="text-body-secondary text-location"> ${personagen.location.name}</small></p>
+        <p class="card-text">${episodioNome}</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

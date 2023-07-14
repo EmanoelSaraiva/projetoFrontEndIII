@@ -12,6 +12,7 @@ body {
     background-image: url('../image/FUNDO_3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 .container_btn{
@@ -30,19 +31,34 @@ body {
     
 }
 
-.col_bck{
-    position: absolute;
-    z-index: -99999;
+.h1_animation{
+    animation: animacaoCard 2s infinite ease-in-out;
 }
 
-.img_bck{
-    position: absolute;
-    z-index: -99999;
+@keyframes colorText {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
-.col_bck img{
-    width: 100vw;
+@keyframes animacaoCard {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
+
 
 .row_top{
     width: 100%;
@@ -78,17 +94,18 @@ body {
     filter: invert(1);
 }
 
-.col_img{
-    animation: colorRBG 1s infinite;
+.modal_background{
+    background-color: #1F2921;
 }
 
-@keyframes colorRBG {
-    from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0.5;
-      }
+.modal_background .modal-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col_img{
+    animation: colorText 1s infinite linear;
 }
 
 .btnBuscar{
