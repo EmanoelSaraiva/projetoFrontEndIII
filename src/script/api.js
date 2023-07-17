@@ -42,10 +42,12 @@ async function renderizarPersonagem(personagen) {
     <div class="col-md-8">
       <div class="card-body">
         <a class="anchor_modal" data-bs-toggle="modal" data-bs-target="#${personagen.id}">${personagen.name}</a> 
-        <div class="statusCirculo" style="background-color: ${statusCor};"></div>
-        <p class="card-text">${statusTexto} - ${personagen.species}</p>
-        <p class="card-text">Visto por último:</p>
-        <p class="card-text"><small class="text-body-secondary text-location"> ${personagen.location.name}</small></p>
+        <section class="container_status">
+        <span class="statusCirculo" style="background-color: ${statusCor};"></span>
+        <p>${statusTexto} - ${personagen.species}</p>
+        </section>
+        <p class="card-text">Visto por último: <small class="text-body-secondary text-location"> ${personagen.location.name}</small></p>
+        
         <p class="card-text">${episodioNome}</p>
       </div>
     </div>
@@ -61,8 +63,10 @@ async function renderizarPersonagem(personagen) {
       <div class="modal-body">
       <img src="${personagen.image}" class="img-fluid rounded-start" alt="..." style="max-height: 200px; min-height: 200px;">
         <div class="card-body"> 
-        <div class="statusCirculo" style="background-color: ${statusCor};"></div>
-        <p class="card-text">${statusTexto} - ${personagen.species}</p>
+        <section class="container_status">
+        <span class="statusCirculo" style="background-color: ${statusCor};"></span>
+        <p>${statusTexto} - ${personagen.species}</p>
+        </section>
         <p class="card-text">Visto por último:</p>
         <p class="card-text"><small class="text-body-secondary text-location"> ${personagen.location.name}</small></p>
         <p class="card-text">${episodioNome}</p>
